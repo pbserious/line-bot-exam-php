@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			echo "groot!"
-			echo $event['source']
+			echo $event
 			$text = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
