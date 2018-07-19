@@ -9,14 +9,21 @@ $access_token = 'AiXFtecLqq9g4D9J7F69eqb97AmaWNsRK+kfUb49gT6ImHoE7k67qamjczXC/If
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+$emji = 'emji';
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		if ($event['type'] == 'message' 
+			&& $event['message']['type'] == 'text') {
+
+			$verifyText = $event['message']['text']
+			if (strpos($verifyText, 'emji') == false) {
+    			return
+			}
 			// Get text sent
-			$text = $event['source']['groupId'];
+			$text = "emji is bad guy."
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
