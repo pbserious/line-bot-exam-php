@@ -18,12 +18,13 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' 
 			&& $event['message']['type'] == 'text') {
 
-			// $verifyText = $event['message']['text'];
-			// if (strpos($verifyText, 'emji') == false) {
-   //  			return;
-			// }
+			$verifyText = $event['message']['text'];
+			$pos = strpos($verifyText, "emji")
+			if ( $pos === false) {
+    			return;
+			}
 			// Get text sent
-			$text = $event['message']['text'];//"emji is bad guy.";
+			$text = "emji is bad guy.";
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
