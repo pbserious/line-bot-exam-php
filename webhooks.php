@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			&& $event['message']['type'] == 'text') {
 
 			$verifyText = $event['message']['text'];
-			$pos = strpos($verifyText, "emji")
+			$pos = strpos($verifyText, "emji");
 			if ( $pos === false) {
     			return;
 			}
